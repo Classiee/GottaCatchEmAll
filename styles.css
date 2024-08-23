@@ -47,3 +47,10 @@ html::-webkit-scrollbar {
     justify-content: center;
     flex-direction: column;
   }
+  
+  .ownedContainer {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+  }

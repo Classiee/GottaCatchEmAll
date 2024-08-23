@@ -30,7 +30,7 @@ let pikachu = {
   let randomPokemon;
   
   let playerInfo = {
-    name: "You",
+    name: "Artsy",
     image: "pokemonTrainerIdle.png",
     pokemon: [],
   }
@@ -86,8 +86,27 @@ let pikachu = {
   }
   
   function showPokemon() {
-    console.log(playerInfo.pokemon);
-  }
+    let pokemonHTML = '';
+    for (let i = 0; i < playerInfo.pokemon.length; i++) {
+        let pokemon = playerInfo.pokemon[i];
+        pokemonHTML += /*HTML*/ `
+          <div class="ownedPokemon">
+            <div>${pokemon.name}</div>
+            <div>lvl: ${pokemon.level}</div>
+            <img src="${pokemon.image}">
+          </div>
+        `;
+    }
+
+    app.innerHTML = /*HTML*/ `
+      <div class="container">
+        <h1>${playerInfo.name} har til nå i baggen din:</h1>
+        <div class="ownedContainer">
+          ${pokemonHTML}
+        </div>
+      </div>
+    `;
+}
   
   function getRandomPokemon() {
     let randomNum = Math.floor(Math.random() * possiblePokemon.length);
