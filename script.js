@@ -100,9 +100,12 @@ let pikachu = {
 
     app.innerHTML = /*HTML*/ `
       <div class="container">
-        <h1>${playerInfo.name} har til nå i baggen din:</h1>
+        <h1>${playerInfo.name} har nå i baggen din:</h1>
         <div class="ownedContainer">
           ${pokemonHTML}
+          <br>
+        <button onclick="updateView()">Finn en annen</button>
+
         </div>
       </div>
     `;
